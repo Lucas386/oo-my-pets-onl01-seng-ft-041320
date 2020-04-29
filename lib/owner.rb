@@ -30,14 +30,16 @@ class Owner
   def dogs
     Dog.all.select {|dog| dog.owner == self}
   end
+  
   def buy_cat(name)
     Cat.new(name, self)
   end
+  
   def buy_dog(name)
     Dog.new(name, self)
   end
   def walk_dogs
-    dogs.each { |dog| dog.mood = "happy" }
+    dog.each { |dog| dog.mood = "happy" }
   end
   def feed_cats
     cats.each { |cat| cat.mood = "happy" }
